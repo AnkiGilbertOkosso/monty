@@ -63,3 +63,4 @@ void __pall(stack_t **head, unsigned int line_number)
 		printf("%d\n", stack->n);
 		stack = stack->next;
 	}
+}
