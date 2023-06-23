@@ -57,8 +57,7 @@ ssize_t getline(char **lineptr, size_t *n, FILE *stream)
 /**
  * _realloc - reallocates memory block
  * @ptr: pointer to the prev memory allocated
- * @old_size: size of the allocated space of ptr
- * @new_size: new size of the new memory block
+ * @size: size of the allocated space of ptr
  * Return: ptr
  */
 
