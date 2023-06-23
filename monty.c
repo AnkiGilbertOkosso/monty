@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 		interpreter.elements = line;
 		line_number++;
 
-		if (chars_read > 0)
+		if (chars_read > 0 && line[0] != '#')
 		{
 			exec(line, &stack, line_number, file);
 		}
