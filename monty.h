@@ -56,6 +56,7 @@ typedef struct MontyInterpreter
 
 extern MontyInterpreter interpreter;
 
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 int exec(char *element, stack_t **stack, unsigned int line_count, FILE *file);
 void free_stack(stack_t *head);
 void __push(stack_t **head, unsigned int line_number);
