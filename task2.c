@@ -1,4 +1,4 @@
-#include "monty.c"
+#include "monty.h"
 
 /**
  * __pop - prints a top
@@ -14,8 +14,8 @@ void __pop(stack_t **head, unsigned int line_number)
 	if (*head == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
-		fclose(interpreter, file);
-		free(interpreter, elements);
+		fclose(interpreter.file);
+		free(interpreter.elements);
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
