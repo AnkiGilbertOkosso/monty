@@ -55,6 +55,7 @@ typedef struct MontyInterpreter
 } MontyInterpreter;
 extern MontyInterpreter interpreter;
 
+void *_realloc(void *ptr, size_t size);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 int exec(char *element, stack_t **stack, unsigned int line_count, FILE *file);
 void free_stack(stack_t *head);

@@ -33,7 +33,7 @@ ssize_t getline(char **lineptr, size_t *n, FILE *stream)
 		if (num_chars == (ssize_t)bufsize)
 		{
 			bufsize += 64;
-			temp = (char *)realloc(buffer, bufsize + 1);
+			temp = (char *)_realloc(buffer, bufsize + 1);
 			if (temp == NULL)
 			{
 				free(buffer);
@@ -52,4 +52,39 @@ ssize_t getline(char **lineptr, size_t *n, FILE *stream)
 	*n = num_chars;
 
 	return (num_chars);
+}
+
+/**
+ * _realloc - reallocates memory block
+ * @ptr: pointer to the prev memory allocated
+ * @old_size: size of the allocated space of ptr
+ * @new_size: new size of the new memory block
+ * Return: ptr
+ */
+
+void *_realloc(void *ptr, size_t size)
+{
+	size_t copy_size;
+	void *new_ptr;
+
+	if (size == 0)
+	{
+		free(ptr);
+		return (NULL);
+	}
+
+	new_ptr = malloc(size);
+	if (new_ptr == NULL)
+		return (NULL);
+
+	if (ptr != NULL)
+	{
+		copy_size = size;
+		if (size > sizeof(ptr))
+			copy_size = sizeof(ptr);
+
+		memcpy(new_ptr, ptr, copy_size);
+		free(ptr);
+	}
+	return (new_ptr);
 }
