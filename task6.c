@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
-  *__sub- sustration
+  *__sub - sustration
   *@head: stack head
   *@line_number: line_number
   *Return: no return

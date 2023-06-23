@@ -17,8 +17,8 @@ int exec(char *element, stack_t **stack, unsigned int line_count, FILE *file)
 		{"pint", __pint}, {"pop", __pop},
 		{"swap", __swap},
 		{"add", __add},	{"nop", __nop},
-		{"div", __sub},/* {"mul", __mul},
-		{"mod", __mod},
+		{"div", __sub}, {"mul", __mul},
+		{"mod", __mod},/*
 		{"pchar", __pchar},
 		{"pstr", __pstr},
 		{"rotr", __rotr},
